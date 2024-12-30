@@ -1,3 +1,5 @@
+import { ConfigImpl } from './ConfigImpl';
+import { SupportEnv } from './enum/config.enum';
 import dev from './env/dev';
 import local from './env/local';
 import prod from './env/prod';

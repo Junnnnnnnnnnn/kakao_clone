@@ -1,4 +1,4 @@
-enum SupportEnv {
+export enum SupportEnv {
   LOCAL = 'local',
   DEV = 'dev',
   TEST = 'test',

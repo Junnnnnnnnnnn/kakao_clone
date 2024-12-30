@@ -1,4 +1,4 @@
-interface ConfigImpl {
+export interface ConfigImpl {
   ENV: string;
   PORT: number;
 }
