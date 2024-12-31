@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  kakao_clone_back:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV
+    image: kakao_clone_back
+    container_name: kakao_clone_back
+    ports:
+      - "9000:3001"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    networks:
+      - kakao_clone_network
+    restart: always
+
+networks:
+  kakao_clone_network:
+    driver: bridge

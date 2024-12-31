@@ -1,6 +1,15 @@
 # KAKAO_CLONE
 > 카카오톡의 중요 기술을 개발
 
+## ✔️ 실행 방법
+1. Config 파일 생성
+   - [ConfigImpl.ts](src\config\ConfigImpl.ts) 파일 형식으로 `src/config/env` 내에 `local`, `dev`, `test`, `prod` 생성해 사용
+2. docker-compose 실행
+   ```
+    NODE_ENV=local docker-compose up -d --build
+   ```
+
+
 ## 🚦 Project setting
 - [ ]  Project init
 - [ ]  ESlint

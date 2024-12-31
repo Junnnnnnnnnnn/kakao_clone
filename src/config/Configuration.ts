@@ -7,7 +7,7 @@ import test from './env/test';
 
 export class Configuration {
   static getConfig(): ConfigImpl {
-    const env = process.env.NODE_ENV;
+    const env = process.env.NODE_ENV as SupportEnv;
 
     switch (env) {
       case SupportEnv.LOCAL:
@@ -19,7 +19,7 @@ export class Configuration {
       case SupportEnv.PROD:
         return prod;
       default:
-        return dev;
+        return local;
     }
   }
 }
