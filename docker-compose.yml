@@ -5,19 +5,35 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    environment:
-      - NODE_ENV
+      args:
+        ENV: ${ENV}
     image: kakao_clone_back
-    container_name: kakao_clone_back
     ports:
       - "9000:3001"
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
+    depends_on:
+      - postgres
     networks:
       - kakao_clone_network
     restart: always
+  
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - kakao_clone_network
+    volumes:
+      - ../postgresql/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
 
 networks:
   kakao_clone_network:
     driver: bridge
+    name: kakao_clone_network
