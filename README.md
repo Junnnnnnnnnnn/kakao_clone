@@ -1,30 +1,36 @@
 # KAKAO_CLONE
+
 > 카카오톡의 중요 기술을 개발
 
 ## ✔️ 실행 방법
+
 1. Config 파일 생성
    - [ConfigImpl.ts](src\config\ConfigImpl.ts) 파일 형식으로 `src/config/env` 내에 `local`, `dev`, `test`, `prod` 생성해 사용
-3. .env 생성
+2. .env 생성
    - `npm install -g ts-node`
    - `NODE_ENV={사용하고자 하는 env(local, dev, prod)} ts-node generate-docker-env.ts`
-4. docker-compose 실행
+3. docker-compose 실행
    ```
     docker-compose up -d --build
    ```
 
-
 ## 🚦 Project setting
-- [ ]  Project init
-- [ ]  ESlint
-- [ ]  Config
-- [ ]  Logger
-- [ ]  Docker 
-- [ ]  Database 
-  - [ ]  redis
-  - [ ]  postgrsql
+
+- [ x ] Project init
+- [ x ] ESlint
+- [ x ] Config
+- [ ] Logger
+  - 로그 라이브러리: `npm install nest-winston winston `
+  - 로그 file 관리 라이브러리: `winston-daily-rotate-file`
+  - [Logger.ts](src\module\Logger.ts) 에 winston setting
+- [ ] Docker
+- [ ] Database
+  - [ ] redis
+  - [ ] postgrsql
 - [ ] RebbitMq
 
 ## 기능
+
 - [ ] 로그인
 - [ ] 실시간 챗팅
   - [ ] 읽음 1 사라짐
@@ -44,6 +50,7 @@
   - [ ] 친구 추가
     - [ ] 이메일 검색
     - [ ] 존재하지 않음 카카오 공유
-  
+
 ## 🧰 기술 스텍
+
 `RebbiMQ`, `PostgreSQL`, `Redis`, `WebSocket`, `TypeOrm`
