@@ -36,28 +36,28 @@ export class Logger {
     return (this.als.getStore() as string) || '0';
   }
 
-  static info(message: string, object?: Record<string, never>): void {
+  static info(message: string, object?: Record<string, any>): void {
     this.logger.info({
       ...object,
       message,
     });
   }
 
-  static warn(message: string, object?: Record<string, never>): void {
+  static warn(message: string, object?: Record<string, any>): void {
     this.logger.warn({
       ...object,
       message,
     });
   }
 
-  static error(message: string, object?: Record<string, never>): void {
+  static error(message: string, object?: Record<string, any>): void {
     this.logger.error({
       ...object,
       message,
     });
   }
 
-  static debug(message: string, object?: Record<string, never>): void {
+  static debug(message: string, object?: Record<string, any>): void {
     this.logger.debug({
       ...object,
       message,
