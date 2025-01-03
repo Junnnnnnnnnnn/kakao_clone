@@ -37,6 +37,10 @@ module.exports = {
     "@typescript-eslint/no-inferrable-types": "off",
     "@typescript-eslint/restrict-template-expressions": "off",
     "@typescript-eslint/no-base-to-string": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
 
     // Import rules
     "import/order": [
