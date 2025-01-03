@@ -1,4 +1,4 @@
-import { ConfigImpl } from './ConfigImpl';
+import { ConfigImpl } from './configImpl';
 import { SupportEnv } from './enum/config.enum';
 import dev from './env/dev';
 import local from './env/local';
