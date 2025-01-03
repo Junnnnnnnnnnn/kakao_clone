@@ -8,30 +8,27 @@ const generator = () => {
   const env = process.env.NODE_ENV;
   let config;
 
-  switch(env) {
+  switch (env) {
     case SupportEnv.LOCAL:
       config = local;
-    break;
+      break;
     case SupportEnv.DEV:
       config = dev;
-    break;
+      break;
     case SupportEnv.PROD:
       config = prod;
-    break;
+      break;
     default:
       config = dev;
-    break;
+      break;
   }
 
   const content = Object.entries(config)
     .map(([key, value]) => `${key}=${value}`)
-    .join('\n')
+    .join('\n');
 
   fs.writeFileSync('.env', content);
   console.log('.env file has been generated');
-}
-
-
-
+};
 
 generator();

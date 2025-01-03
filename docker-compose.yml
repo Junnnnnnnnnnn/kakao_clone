@@ -9,23 +9,23 @@ services:
         ENV: ${ENV}
     image: kakao_clone_back
     ports:
-      - "9000:3001"
+      - '9000:3000'
     volumes:
-      - .:/usr/src/app
       - /usr/src/app/node_modules
+      - ./logs:/logs
     depends_on:
       - postgres
     networks:
-      - kakao_clone_network
+      - app
     restart: always
-  
+
   postgres:
     image: postgres:15
     container_name: postgres
     ports:
-      - "5432:5432"
+      - '5432:5432'
     networks:
-      - kakao_clone_network
+      - app
     volumes:
       - ../postgresql/data:/var/lib/postgresql/data
     environment:
@@ -34,7 +34,8 @@ services:
       POSTGRES_DB: ${POSTGRES_DB}
     restart: always
 
+
 networks:
-  kakao_clone_network:
-    driver: bridge
-    name: kakao_clone_network
+  app:
+    external: true
+    name: app
